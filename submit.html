@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Prediction Result</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+            background: url("{{ url_for('static', filename='Capture 3.jpg') }}") no-repeat center center fixed;
+            background-size: cover;
+            color: white;
+            text-align: left;
+        }
+
+        .navbar {
+            background-color: rgba(0, 0, 0, 0.85);
+            overflow: hidden;
+            padding: 14px 20px;
+            font-size: 20px;
+            font-weight: bold;
+            color: white;
+        }
+
+        .navbar-buttons {
+            float: right;
+        }
+
+        .navbar-buttons a {
+            background-color: #00BFFF;
+            color: white;
+            padding: 8px 14px;
+            margin-left: 10px;
+            text-decoration: none;
+            border-radius: 4px;
+            font-size: 16px;
+        }
+
+        .navbar-buttons a:hover {
+            background-color: #009ACD;
+        }
+
+        .content {
+            position: relative;
+            top: 50px;
+        }
+
+        .prediction-text {
+            font-size: 22px;
+            margin-top: 40px;
+            background-color: rgba(0, 0, 0, 0.5);
+            display: inline-block;
+            padding: 15px 25px;
+            border-radius: 10px;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="navbar">
+        Employee Productivity Prediction Using ML
+        <div class="navbar-buttons">
+            <a href="{{ url_for('home') }}">Home</a>
+            <a href="{{ url_for('about') }}">About</a>
+            <a href="{{ url_for('predict') }}">Predict</a>
+        </div>
+    </div>
+
+    <div class="content">
+        <div class="prediction-text" text_align="center">
+            Based on the given input, the employee is {{ prediction_text }}.
+        </div>
+    </div>
+
+</body>
+</html>
+
+
+

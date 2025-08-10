@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Predict Productivity</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+            background-image: url("{{ url_for('static', filename='predict.jpg') }}");
+            background-size: cover;
+            background-position: center;
+        }
+
+        /* Navigation bar */
+        .navbar {
+            background-color: rgba(0, 0, 0, 0.85);
+            overflow: hidden;
+            padding: 14px 20px;
+            font-size: 20px;
+            font-weight: bold;
+            color: white;
+        }
+        .navbar-buttons {
+            float: right;
+        }
+        .navbar-buttons a {
+            background-color: #00BFFF;
+            color: white;
+            padding: 8px 14px;
+            margin-left: 10px;
+            text-decoration: none;
+            border-radius: 4px;
+            font-size: 16px;
+        }
+        .navbar-buttons a:hover {
+            background-color: #009ACD;
+        }
+
+        /* Form container */
+        .form-container {
+            max-width: 800px;
+            margin: 50px auto;
+            padding: 20px;
+            background-color: rgba(255, 255, 255, 0.88);
+            border-radius: 10px;
+        }
+        h2 {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        .form-group {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 15px;
+        }
+        .form-group label {
+            flex: 1;
+            margin-right: 10px;
+        }
+        .form-group input {
+            flex: 2;
+            padding: 8px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+        .submit-btn {
+            display: block;
+            width: 100%;
+            padding: 10px;
+            background-color: #28a745;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        .submit-btn:hover {
+            background-color: #218838;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Navigation bar -->
+    <div class="navbar">
+        Employee Performance Prediction Using ML
+        <div class="navbar-buttons">
+            <a href="{{ url_for('home') }}">Home</a>
+            <a href="{{ url_for('about') }}">About</a>
+            <a href="{{ url_for('predict') }}">Predict</a>
+        </div>
+    </div>
+
+    <!-- Prediction form -->
+    <div class="form-container">
+        <h2>Employee Productivity Prediction</h2>
+        <form method="POST" action="/predict">
+
+            <!-- Arrange as per app.py order -->
+            <div class="form-group">
+                <label for="quarter">Quarter</label>
+                <input id="quarter" type="text" name="quarter" placeholder="Q1 / Q2 / Q3 / Q4" required>
+            </div>
+
+            <div class="form-group">
+                <label for="department">Department</label>
+                <input id="department" type="text" name="department" placeholder="Sewing / Finishing" required>
+            </div>
+
+            <div class="form-group">
+                <label for="day">Day</label>
+                <input id="day" type="text" name="day" placeholder="Monday / Tuesday..." required>
+            </div>
+
+            <div class="form-group">
+                <label for="team">Team</label>
+                <input id="team" type="number" name="team" placeholder="Team number" required>
+            </div>
+
+            <div class="form-group">
+                <label for="targeted_productivity">Targeted Productivity</label>
+                <input id="targeted_productivity" type="number" step="0.01" name="targeted_productivity" required>
+            </div>
+
+            <div class="form-group">
+                <label for="smv">SMV</label>
+                <input id="smv" type="number" step="0.01" name="smv" required>
+            </div>
+
+            <div class="form-group">
+                <label for="over_time">Over Time</label>
+                <input id="over_time" type="number" step="0.01" name="over_time" required>
+            </div>
+
+            <div class="form-group">
+                <label for="incentive">Incentive</label>
+                <input id="incentive" type="number" step="0.01" name="incentive" required>
+            </div>
+
+            <div class="form-group">
+                <label for="idle_time">Idle Time</label>
+                <input id="idle_time" type="number" step="0.01" name="idle_time" required>
+            </div>
+
+            <div class="form-group">
+                <label for="idle_men">Idle Men</label>
+                <input id="idle_men" type="number" step="0.01" name="idle_men" required>
+            </div>
+
+            <div class="form-group">
+                <label for="no_of_style_change">No. of Style Change</label>
+                <input id="no_of_style_change" type="number" step="1" name="no_of_style_change" required>
+            </div>
+
+            <div class="form-group">
+                <label for="no_of_workers">No. of Workers</label>
+                <input id="no_of_workers" type="number" step="1" name="no_of_workers" required>
+            </div>
+
+            <div class="form-group">
+                <label for="month">Month</label>
+                <input id="month" type="number" step="1" name="month" required>
+            </div>
+
+            <button type="submit" class="submit-btn">SUBMIT</button>
+        </form>
+    </div>
+
+</body>
+</html>

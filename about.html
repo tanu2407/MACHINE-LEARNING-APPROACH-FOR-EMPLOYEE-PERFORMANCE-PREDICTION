@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>About - Employee Performance Predictor</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+            color: black;
+            background-image: url('{{ url_for("static", filename="about.jpg") }}'); /* Replace with your image */
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+        }
+        /* Navigation bar */
+        nav {
+            background-color: #333;
+            padding: 10px 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        nav h1 {
+            color: white;
+            margin: 0;
+            font-size: 22px;
+        }
+        nav .nav-links {
+            display: flex;
+            gap: 15px;
+        }
+        nav .nav-links a {
+            background-color: #4CAF50;
+            color: white;
+            text-decoration: none;
+            padding: 8px 15px;
+            border-radius: 5px;
+            font-size: 14px;
+        }
+        nav .nav-links a:hover {
+            background-color: #45a049;
+        }
+        /* Content section */
+        .content {
+            max-width: 900px;
+            margin: 50px auto;
+            background-color: rgba(255, 255, 255, 0.85);
+            padding: 30px;
+            border-radius: 10px;
+            line-height: 1.6;
+        }
+        .content h2 {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Navigation Bar -->
+    <nav>
+        <h1>Employee Performance Prediction Using ML</h1>
+        <div class="nav-links">
+            <a href="/">Home</a>
+            <a href="/about">About</a>
+            <a href="/predict">Predict</a>
+        </div>
+    </nav>
+
+    <!-- Page Content -->
+    <div class="content">
+        <h2>About This Project</h2>
+        <p>
+            This project uses advanced machine learning algorithms to predict employee productivity
+            based on various factors such as targeted productivity, department, team, over time, idle time,
+            number of style changes, SMV, incentives, and worker details.
+        </p>
+        <p>
+            It is built using <strong>Python</strong>, <strong>Flask</strong>, and <strong>Scikit-learn</strong>,
+            with models including Linear Regression, Random Forest, and XGBoost.
+            The system compares model performances and selects the best one for predictions.
+        </p>
+        <p>
+            This application provides an easy-to-use interface for businesses to assess employee performance
+            and make data-driven decisions.
+        </p>
+    </div>
+
+</body>
+</html>
+
+

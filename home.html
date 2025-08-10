@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Employee Productivity Prediction Using ML</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+    <style>
+        body, html {
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+        }
+
+        .navbar {
+            background-color: #111;
+            overflow: hidden;
+            padding: 14px 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .navbar h2 {
+            color: white;
+            margin: 0;
+        }
+
+        .navbar a {
+            float: right;
+            color: white;
+            text-align: center;
+            padding: 8px 16px;
+            text-decoration: none;
+            font-size: 17px;
+            border-radius: 4px;
+            background-color: #0d6efd;
+            margin-left: 10px;
+        }
+
+        .hero-section {
+            position: relative;
+            background: url("{{ url_for('static', filename='performance_evaluation.jpg') }}") no-repeat center center/cover;
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+        }
+
+        .hero-section p {
+            color: black;
+            font-size: 20px;
+            font-weight: 500;
+            max-width: 80%;
+            background-color: rgba(255, 255, 255, 0.6);
+            padding: 20px;
+            border-radius: 10px;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="navbar">
+        <h2>Employee Productivity Prediction Using ML</h2>
+        <div>
+            <a href="{{ url_for('predict') }}">Predict</a>
+            <a href="{{ url_for('about') }}">About</a>
+            <a href="{{ url_for('home') }}">Home</a>
+        </div>
+    </div>
+
+    <div class="hero-section">
+        <p>
+            Any business’s success depends on its employees. Businesses that realize this are concerned about employee output and productivity.
+            Productivity has a compounding effect at the different levels in the workplace, meaning that high productivity at a lower level of
+            organization paves way for higher productivity at the higher levels of the organization. Hence, analysis of performance of employees
+            in any organization is the need of the hour.
+        </p>
+    </div>
+
+</body>
+</html>
+
